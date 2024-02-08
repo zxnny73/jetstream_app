@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/image/upload',[ UploadController::class, 'upload'])->name('image.upload');
 Route::resource('home', HomeController::class)->middleware('auth');
 
 // Route::middleware([
